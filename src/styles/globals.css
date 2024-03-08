@@ -31,3 +31,9 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer base {
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-sky-500 to-purple-500;
+  }
+}

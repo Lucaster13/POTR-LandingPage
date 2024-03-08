@@ -18,7 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head></head>
-      <body className={cn(inter.className, " h-screen relative antialiased")}>
+      <body
+        className={cn(
+          inter.className,
+          "h-screen relative antialiased text-light"
+        )}
+      >
         {children}
       </body>
     </html>

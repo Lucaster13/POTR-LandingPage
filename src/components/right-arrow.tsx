@@ -4,8 +4,8 @@ export default function RightArrow({ className }: BaseProps) {
   return (
     <svg
       fill="#000000"
-      height="2.5rem"
-      width="2.5rem"
+      height="2rem"
+      width="2rem"
       version="1.1"
       id="Layer_1"
       className={className}

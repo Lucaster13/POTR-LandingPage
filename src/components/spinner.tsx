@@ -15,9 +15,9 @@ export default function Spinner() {
           r="9.5"
           fill="none"
           strokeWidth="2"
-          className="animate-spinner"
-          style={{ strokeLinecap: "round" }}
-        ></circle>
+          strokeLinecap="round"
+          className="animate-spinner-stroke"
+        />
       </g>
     </svg>
   );
