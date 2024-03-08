@@ -14,9 +14,10 @@ export default function Spinner() {
           cy="12"
           r="9.5"
           fill="none"
-          strokeWidth="2"
+          strokeWidth="1"
           strokeLinecap="round"
           className="animate-spinner-stroke"
+          strokeDasharray={0}
         />
       </g>
     </svg>

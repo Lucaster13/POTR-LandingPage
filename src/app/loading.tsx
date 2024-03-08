@@ -14,7 +14,7 @@ export default function Loading({ faded }: FadeableProps) {
   return (
     <section className={className}>
       <h1 className="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-wrap font-extrabold">
-        <span className="bg-clip-text text-transparent bg-primary-gradient">
+        <span className="bg-clip-text text-transparent bg-gradient-primary">
           PROTECTORS
           <br />
           OF THE

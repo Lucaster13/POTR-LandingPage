@@ -46,12 +46,12 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "spinner-stroke": "spinner-stroke 1.5s ease-in-out",
+        "spinner-stroke": "spinner-stroke 1.5s ease-in-out infinite",
       },
       colors: {
         primary: colors.sky,
         dark: "#050505",
-        light: colors.neutral[100],
+        light: colors.neutral[50],
         normal: { ...colors.neutral, "1000": "#050505" },
       },
     },
