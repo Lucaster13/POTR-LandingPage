@@ -49,10 +49,11 @@ const config = {
         "spinner-stroke": "spinner-stroke 1.5s ease-in-out infinite",
       },
       colors: {
-        primary: colors.sky,
+        primary: colors.sky[500],
         dark: "#050505",
         light: colors.neutral[50],
         normal: { ...colors.neutral, "1000": "#050505" },
+        discord: "#5865F2",
       },
     },
   },

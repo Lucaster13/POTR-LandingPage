@@ -6,7 +6,7 @@ export default function Spinner() {
       stroke="#000"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      className="lg:scale-[200%] xl:scale-[250%] stroke-purple-500"
+      className="lg:scale-[200%] xl:scale-[250%] stroke-primary"
     >
       <g className="animate-spin origin-center duration-[4s]">
         <circle

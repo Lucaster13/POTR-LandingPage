@@ -4,7 +4,6 @@ import { useState, lazy, useEffect, useRef } from "react";
 import { Application } from "@splinetool/runtime";
 import { fadeable } from "@/styles/fadeable";
 import Loading from "./loading";
-import { Button } from "@/components/ui/button";
 
 const Content = lazy(() => import("@/components/home/content"));
 const Spline = lazy(() => import("@splinetool/react-spline"));
@@ -21,11 +20,11 @@ export default function Home() {
   }, [splineLoaded]);
 
   return (
-    <main className="relative h-full">
+    <main>
       <Content faded={!sceneVisible} splineApp={splineApp.current} />
       <Spline
         className={fadeable({
-          className: `inset-0 absolute -z-0`,
+          className: `inset-0 absolute z-0`,
           faded: !sceneVisible,
         })}
         onLoad={(spline) => {
