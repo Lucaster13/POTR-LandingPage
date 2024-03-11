@@ -1,7 +1,8 @@
 import { Application } from "@splinetool/runtime";
 import RightArrow from "../right-arrow";
 import { Button } from "../ui/button";
-import { useRouter } from "next/navigation";
+import { DISCORD_URL } from "@/lib/routes";
+import { openNewTab } from "@/lib/utils";
 
 export default function Cta({
   splineApp,
@@ -13,11 +14,14 @@ export default function Cta({
       <Button
         onMouseOver={() => splineApp?.setVariable("isParticlesOn", true)}
         onMouseOut={() => splineApp?.setVariable("isParticlesOn", false)}
-        onClick={() => {}}
       >
         MINT A POTR
       </Button>
-      <Button className="hover:pe-10 group/button" variant="secondary">
+      <Button
+        className="hover:pe-10 group/button"
+        variant="secondary"
+        onClick={() => openNewTab(DISCORD_URL)}
+      >
         ENTER THE KINGDOM
         <RightArrow
           className="absolute fill-primary right-1 inline 
