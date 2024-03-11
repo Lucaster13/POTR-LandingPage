@@ -1,6 +1,7 @@
 import { Application } from "@splinetool/runtime";
 import RightArrow from "../right-arrow";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
 export default function Cta({
   splineApp,
@@ -12,6 +13,7 @@ export default function Cta({
       <Button
         onMouseOver={() => splineApp?.setVariable("isParticlesOn", true)}
         onMouseOut={() => splineApp?.setVariable("isParticlesOn", false)}
+        onClick={() => {}}
       >
         MINT A POTR
       </Button>

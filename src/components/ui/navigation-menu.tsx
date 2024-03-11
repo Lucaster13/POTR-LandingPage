@@ -3,6 +3,7 @@
 import * as React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
@@ -28,7 +29,7 @@ const NavigationMenuList = React.forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      "group flex flex-1 h-6 gap-6 list-none items-end justify-center",
+      "group flex flex-1 h-6 gap-6 list-none justify-center items-center",
       className
     )}
     {...props}
@@ -42,25 +43,31 @@ const NavigationMenuLink = NavigationMenuPrimitive.Link;
 
 const NavigationMenuListLink = React.forwardRef<
   React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+  React.ComponentPropsWithoutRef<"a"> & { external?: boolean }
+>(({ className, title, children, href, external, ...props }, ref) => {
   return (
     <NavigationMenuItem
-      className="group bg-transparent transition-all flex my-auto duration-300 backdrop-blur-sm items-center 
+      className="group bg-none transition-all flex duration-300 items-center 
     justify-center text-sm text-gradient-primary font-medium disabled:pointer-events-none disabled:opacity-50"
     >
-      <NavigationMenuLink>
-        <a
-          ref={ref}
-          className={cn(
-            "select-none block outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
+      <a
+        ref={ref}
+        className={cn(
+          "select-none outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground font-medium",
+          className
+        )}
+        href={href ?? ""}
+        target={external ? "_blank" : ""}
+        rel={external ? "noreferrer" : ""}
+        {...props}
+      >
+        <NavigationMenuLink
+          asChild
+          className="text-gradient-primary text-center"
         >
-          <div className="text-sm font-medium">{title ?? children}</div>
-        </a>
-      </NavigationMenuLink>
+          <span>{title ?? children}</span>
+        </NavigationMenuLink>
+      </a>
     </NavigationMenuItem>
   );
 });
