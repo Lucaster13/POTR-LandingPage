@@ -42,34 +42,47 @@ const NavigationMenuLink = NavigationMenuPrimitive.Link;
 
 const NavigationMenuListLink = React.forwardRef<
   React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a"> & { external?: boolean }
->(({ className, title, children, href, external, ...props }, ref) => {
-  return (
-    <NavigationMenuItem
-      className="group bg-none transition-all flex duration-300 items-center 
+  React.ComponentPropsWithoutRef<"a"> & {
+    external?: boolean;
+    noUnderline?: boolean;
+  }
+>(
+  (
+    { className, title, children, href, external, noUnderline, ...props },
+    ref
+  ) => {
+    return (
+      <NavigationMenuItem
+        className="bg-none  transition-all flex duration-300 items-center 
     justify-center text-sm text-gradient-primary font-medium disabled:pointer-events-none disabled:opacity-50"
-    >
-      <a
-        ref={ref}
-        className={cn(
-          "select-none outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground font-medium",
-          className
-        )}
-        href={href ?? ""}
-        target={external ? "_blank" : ""}
-        rel={external ? "noreferrer" : ""}
-        {...props}
       >
-        <NavigationMenuLink
-          asChild
-          className="text-gradient-primary text-center"
+        <a
+          ref={ref}
+          className={cn(
+            "select-none outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground font-medium",
+            className
+          )}
+          href={href ?? ""}
+          target={external ? "_blank" : ""}
+          rel={external ? "noreferrer" : ""}
+          {...props}
         >
-          <span>{title ?? children}</span>
-        </NavigationMenuLink>
-      </a>
-    </NavigationMenuItem>
-  );
-});
+          <NavigationMenuLink
+            asChild
+            className="text-gradient-primary text-center group/navLink"
+          >
+            <span>
+              {title ?? children}
+              {!noUnderline && (
+                <span className="block max-w-0 transition-all duration-300 group-hover/navLink:max-w-full h-px bg-gradient-primary" />
+              )}
+            </span>
+          </NavigationMenuLink>
+        </a>
+      </NavigationMenuItem>
+    );
+  }
+);
 NavigationMenuListLink.displayName = "NavigationMenuListLink";
 
 export {

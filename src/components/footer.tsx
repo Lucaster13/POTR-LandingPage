@@ -13,14 +13,15 @@ export default function Footer() {
         <NavigationMenuList className="text-gradient-primary">
           <NavigationMenuListLink
             href="/"
-            className=" relative text-md font-extrabold"
+            className="relative text-md font-extrabold"
             title="POTR"
+            noUnderline
           />
           <div className="w-px h-6 inline-block bg-gradient-primary" />
-          <NavigationMenuListLink href={X_URL} external>
+          <NavigationMenuListLink href={X_URL} external noUnderline>
             <Image src={"/x.svg"} alt="twitter" width={10} height={10} />
           </NavigationMenuListLink>
-          <NavigationMenuListLink href={DISCORD_URL} external>
+          <NavigationMenuListLink href={DISCORD_URL} external noUnderline>
             <Image src={"/discord.svg"} alt="discord" width={15} height={15} />
           </NavigationMenuListLink>
         </NavigationMenuList>

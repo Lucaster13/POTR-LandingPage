@@ -24,7 +24,7 @@ export default function Cta({
       >
         ENTER THE KINGDOM
         <RightArrow
-          className="absolute fill-primary right-1 inline 
+          className="absolute right-1 inline 
             group-hover/button:opacity-100 -skew-y-6 -rotate-12 group-hover/button:skew-y-0
             group-hover/button:rotate-0 opacity-0 transition-all duration-300"
         />
