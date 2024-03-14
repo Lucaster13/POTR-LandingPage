@@ -10,7 +10,7 @@ import Discord from "./icons/discord";
 
 export default function Footer() {
   return (
-    <div className="container z-40 absolute inset-0 pb-4 bg-gradient-to-t md:bg-none from-dark flex mt-auto gap-4 items-center justify-center h-fit">
+    <div className="container z-40 absolute inset-0 pb-10 bg-gradient-to-t md:bg-none from-dark flex mt-auto gap-4 items-center justify-center h-fit">
       <NavigationMenu className="group/nav">
         <NavigationMenuList className="text-gradient-primary">
           <NavigationMenuListLink

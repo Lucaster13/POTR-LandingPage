@@ -6,7 +6,7 @@ export default function Loading({ faded }: FadeableProps) {
   const className = cn(
     fadeable({
       className:
-        "absolute inset-0 m-auto h-dynamic-screen w-screen flex items-center flex-col gap-12 pb-64 justify-center transition-opacity bg-base duration-1000",
+        "absolute inset-0 h-dynamic-screen w-screen flex items-center flex-col gap-12 justify-center transition-opacity bg-base duration-1000",
       faded,
     }),
     faded ? "-z-50" : "z-50"
