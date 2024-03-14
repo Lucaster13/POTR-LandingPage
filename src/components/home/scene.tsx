@@ -17,7 +17,7 @@ export default function Scene() {
         faded: !store.splineIsLoaded,
       })}
       onLoad={(spline) => {
-        setTimeout(() => store.set({ splineIsLoaded: true }), 1000);
+        setTimeout(() => store.set({ splineIsLoaded: true }), 0);
         splineApp.current = spline;
       }}
       scene="https://prod.spline.design/2qvrhVg1x6Zg7181/scene.splinecode"
