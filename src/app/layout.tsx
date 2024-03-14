@@ -11,7 +11,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "POTR",
-  description: "Join The Rand Kingdom",
+  description:
+    "Mint, train, and evolve interactive NFT heroes on the Algorand blockchain. Join The Rand Kingdom!",
+  keywords:
+    "NFT, Protectors of The Rand, POTR, Algorand, NFT Collectibles, NFT, Interactive NFT, Blockchain Gaming, NFT Adventure, NFT Quest, Evolving NFT",
+  robots: "index, follow",
 };
 
 export default function RootLayout({
@@ -21,7 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <link rel="canonical" href="[potrnft.xyz]" />
+      </head>
       <body
         className={cn(
           inter.className,
