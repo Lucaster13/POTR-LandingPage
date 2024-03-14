@@ -1,4 +1,4 @@
-import SvgGradient from "./svg-gradient";
+import SvgGradient from "../svg-gradient";
 
 export default function Spinner() {
   return (

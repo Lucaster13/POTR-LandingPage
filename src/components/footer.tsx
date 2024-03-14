@@ -5,10 +5,12 @@ import {
 } from "@/components/ui/navigation-menu";
 import { DISCORD_URL, X_URL } from "@/lib/routes";
 import Image from "next/image";
+import X from "./icons/x";
+import Discord from "./icons/discord";
 
 export default function Footer() {
   return (
-    <div className="container z-40 absolute inset-0 mb-4 flex mt-auto gap-4 items-center justify-center h-fit">
+    <div className="container z-40 absolute inset-0 pb-4 bg-gradient-to-t md:bg-none from-dark flex mt-auto gap-4 items-center justify-center h-fit">
       <NavigationMenu className="group/nav">
         <NavigationMenuList className="text-gradient-primary">
           <NavigationMenuListLink
@@ -19,10 +21,10 @@ export default function Footer() {
           />
           <div className="w-px h-6 inline-block bg-gradient-primary" />
           <NavigationMenuListLink href={X_URL} external noUnderline>
-            <Image src={"/x.svg"} alt="twitter" width={10} height={10} />
+            <X />
           </NavigationMenuListLink>
           <NavigationMenuListLink href={DISCORD_URL} external noUnderline>
-            <Image src={"/discord.svg"} alt="discord" width={15} height={15} />
+            <Discord />
           </NavigationMenuListLink>
         </NavigationMenuList>
       </NavigationMenu>

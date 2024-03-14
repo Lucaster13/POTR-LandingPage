@@ -55,6 +55,9 @@ const config = {
         normal: { ...colors.neutral, "1000": "#050505" },
         discord: "#5865F2",
       },
+      height: {
+        "dynamic-screen": "calc(100dvh)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

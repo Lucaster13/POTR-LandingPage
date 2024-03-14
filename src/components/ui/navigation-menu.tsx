@@ -3,6 +3,7 @@
 import * as React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
@@ -56,7 +57,7 @@ const NavigationMenuListLink = React.forwardRef<
         className="bg-none  transition-all flex duration-300 items-center 
     justify-center text-sm text-gradient-primary font-medium disabled:pointer-events-none disabled:opacity-50"
       >
-        <a
+        <Link
           ref={ref}
           className={cn(
             "select-none outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground font-medium",
@@ -78,7 +79,7 @@ const NavigationMenuListLink = React.forwardRef<
               )}
             </span>
           </NavigationMenuLink>
-        </a>
+        </Link>
       </NavigationMenuItem>
     );
   }
