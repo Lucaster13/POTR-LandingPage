@@ -4,7 +4,6 @@ import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
-import Circle from "@/components/icons/circle";
 import PageBlur from "@/components/page-blur";
 
 const inter = Inter({ subsets: ["latin"] });

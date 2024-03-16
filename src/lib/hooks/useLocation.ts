@@ -9,7 +9,6 @@ export default function useLocation() {
 
   // isHomePage
   useEffect(() => {
-    console.log(pathname);
     store.set({ isHomePage: pathname === Route.HOME });
   }, [pathname]);
 }

@@ -25,7 +25,7 @@ export default function BasicCard({
         <CardTitle>{header}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent>{content}</CardContent>
+      <CardContent className="text-pretty">{content}</CardContent>
     </Card>
   );
 }
