@@ -5,7 +5,8 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/strict-type-checked",
     "plugin:react-hooks/recommended",
-    "eslint-config-prettier"
+    "eslint-config-prettier",
+    "next/core-web-vitals"
   ],
   "ignorePatterns": ["dist", ".eslintrc.cjs"],
   "parser": "@typescript-eslint/parser",
@@ -19,6 +20,7 @@
     "react-refresh/only-export-components": [
       "warn",
       { "allowConstantExport": true }
-    ]
+    ],
+    "react-hooks/exhaustive-deps": 0
   }
 }

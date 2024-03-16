@@ -12,7 +12,7 @@ const NavigationMenu = React.forwardRef<
   <NavigationMenuPrimitive.Root
     ref={ref}
     className={cn(
-      "relative group/nav z-10 flex max-w-max flex-col flex-1 bg-none items-center justify-center",
+      "relative group/nav z-10 flex flex-1 bg-none justify-center items-center",
       className
     )}
     {...props}
@@ -46,15 +46,25 @@ const NavigationMenuListLink = React.forwardRef<
   React.ComponentPropsWithoutRef<"a"> & {
     external?: boolean;
     noUnderline?: boolean;
+    active?: boolean;
   }
 >(
   (
-    { className, title, children, href, external, noUnderline, ...props },
+    {
+      className,
+      title,
+      children,
+      href,
+      external,
+      noUnderline,
+      active,
+      ...props
+    },
     ref
   ) => {
     return (
       <NavigationMenuItem
-        className="bg-none  transition-all flex duration-300 items-center 
+        className="bg-none transition-all flex duration-300 items-center 
     justify-center text-sm text-gradient-primary font-medium disabled:pointer-events-none disabled:opacity-50"
       >
         <Link
@@ -70,12 +80,16 @@ const NavigationMenuListLink = React.forwardRef<
         >
           <NavigationMenuLink
             asChild
-            className="text-gradient-primary text-center group/navLink"
+            className="text-gradient-primary text-center group/navLink data-[active]:brightness-125 data-[active]:font-bold"
+            active={active}
           >
             <span>
               {title ?? children}
-              {!noUnderline && (
+              {!noUnderline && !active && (
                 <span className="block max-w-0 transition-all duration-300 group-hover/navLink:max-w-full h-px bg-gradient-primary" />
+              )}
+              {active && (
+                <span className="block max-w-full h-px bg-gradient-primary" />
               )}
             </span>
           </NavigationMenuLink>

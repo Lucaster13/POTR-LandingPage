@@ -1,17 +1,25 @@
+"use client";
+
 import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuListLink,
 } from "@/components/ui/navigation-menu";
-import { DISCORD_URL, X_URL } from "@/lib/routes";
-import Image from "next/image";
+import { DISCORD_URL, Route, X_URL } from "@/lib/routes";
 import X from "./icons/x";
 import Discord from "./icons/discord";
+import { cn } from "@/lib/utils";
+import { useStore } from "@/lib/store";
 
 export default function Footer() {
+  const isHomePage = useStore((s) => s.isHomePage);
+  const className = cn(
+    "container z-40 absolute inset-0 py-10 bg-gradient-to-t md:bg-none from-dark flex mt-auto gap-4 items-center justify-center h-fit",
+    !isHomePage && "md:bg-gradient-to-t"
+  );
   return (
-    <div className="container z-40 absolute inset-0 pb-10 bg-gradient-to-t md:bg-none from-dark flex mt-auto gap-4 items-center justify-center h-fit">
-      <NavigationMenu className="group/nav">
+    <div className={className}>
+      <NavigationMenu className="justify-center">
         <NavigationMenuList className="text-gradient-primary">
           <NavigationMenuListLink
             href="/"

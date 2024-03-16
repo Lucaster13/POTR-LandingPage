@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          "h-dynamic-screen relative antialiased w-screen bg-base text-light overflow-hidden"
+          "h-dynamic-screen relative antialiased w-screen bg-base text-light overflow-clip"
         )}
       >
         <PageBlur />

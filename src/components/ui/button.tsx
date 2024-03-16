@@ -11,7 +11,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        secondary: "bg-transparent text-light outline outline-light outline-px",
+        secondary: "bg-transparent text-light border border-light",
         primary:
           "bg-gradient-primary hover:text-dark hover:brightness-125 text-light",
       },

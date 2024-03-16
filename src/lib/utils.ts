@@ -11,3 +11,7 @@ export function openNewTab(url: string) {
     win.focus();
   }
 }
+
+export function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
