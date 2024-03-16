@@ -8,7 +8,7 @@ export default function PageBlur() {
   });
   return (
     <div className={className}>
-      <Circle className="h-[60rem] blur-[8rem] w-[60rem] brightness-[12%] skew-y-[45deg] skew-x-12 -rotate-12" />
+      <Circle className="h-[60rem] blur-[8rem] w-[60rem] brightness-[18%] skew-y-[45deg] skew-x-12 -rotate-12" />
     </div>
   );
 }
