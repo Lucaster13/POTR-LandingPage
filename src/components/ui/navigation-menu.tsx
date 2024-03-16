@@ -85,11 +85,8 @@ const NavigationMenuListLink = React.forwardRef<
           >
             <span>
               {title ?? children}
-              {!noUnderline && !active && (
+              {!noUnderline && (
                 <span className="block max-w-0 transition-all duration-300 group-hover/navLink:max-w-full h-px bg-gradient-primary" />
-              )}
-              {active && (
-                <span className="block max-w-full h-px bg-gradient-primary" />
               )}
             </span>
           </NavigationMenuLink>
