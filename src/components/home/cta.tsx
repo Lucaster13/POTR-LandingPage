@@ -1,34 +1,29 @@
+"use client";
+
 import { Application } from "@splinetool/runtime";
 import RightArrow from "../right-arrow";
 import { Button } from "../ui/button";
 import { DISCORD_URL } from "@/lib/routes";
-import { openNewTab } from "@/lib/utils";
+import { cn, openNewTab } from "@/lib/utils";
+import { BaseProps } from "@/styles/base";
+import ArrowGhostButton from "../arrow-ghost-button";
 
-export default function Cta({
-  splineApp,
-}: {
-  splineApp: Application | undefined;
-}) {
+export type CtaProps = { exploreCollection?: boolean } & BaseProps;
+
+export default function Cta({ className, exploreCollection }: CtaProps) {
+  const cName = cn(
+    "flex gap-4 z-10 flex-col md:flex-row items-center justify-center lg:justify-start md:items-start",
+    className
+  );
   return (
-    <div className="flex gap-4 z-10 flex-col md:flex-row items-center justify-center lg:justify-start md:items-start">
-      <Button
-        onMouseOver={() => splineApp?.setVariable("isParticlesOn", true)}
-        onMouseOut={() => splineApp?.setVariable("isParticlesOn", false)}
-      >
-        MINT A POTR
-      </Button>
-      <Button
-        className="hover:pe-10 group/button"
-        variant="secondary"
-        onClick={() => openNewTab(DISCORD_URL)}
-      >
-        ENTER THE KINGDOM
-        <RightArrow
-          className="absolute right-1 inline 
-            group-hover/button:opacity-100 -skew-y-6 -rotate-12 group-hover/button:skew-y-0
-            group-hover/button:rotate-0 opacity-0 transition-all duration-300"
-        />
-      </Button>
+    <div className={cName}>
+      <Button>MINT A POTR</Button>
+      <ArrowGhostButton href={DISCORD_URL}>ENTER THE KINGDOM</ArrowGhostButton>
+      {exploreCollection && (
+        <ArrowGhostButton href={DISCORD_URL}>
+          EXPLORE THE COLLECTION
+        </ArrowGhostButton>
+      )}
     </div>
   );
 }

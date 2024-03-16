@@ -57,7 +57,7 @@ const CARD_PROPS: IconCardProps[] = [
     content: (
       <>
         Your POTR can be summoned in {PotrAppLink} through a secure Algorand
-        smart contract.
+        smart contract. Each POTR is minted at level 1 with base traits.
       </>
     ),
   },
@@ -75,21 +75,28 @@ const CARD_PROPS: IconCardProps[] = [
     icon: IconCardIconType.TRAIN,
     content: (
       <>
-        Use {$POTRLink} to level up your NFT, unlocking new areas throughout The
-        Rand Kingdom.
+        Use {$POTRLink} to level up your NFT, unlocking new areas of The Rand
+        Kingdom.
       </>
     ),
   },
   {
     icon: IconCardIconType.EQUIP,
-    content: <>{$POTRLink}, unlocking new areas throughout The Rand Kingdom.</>,
+    content: (
+      <>
+        {$POTRLink} can also be used to acquire new traits and consumables to
+        use on your quests.
+      </>
+    ),
   },
   {
     icon: IconCardIconType.EVOLVE,
-    content: `Our ecosystem is a crucible of innovation — every hero's tale
-    is unique, shaped by quests and the community's wisdom. As
-    you embark on this odyssey, your NFT evolves, celebrating your
-    legacy within Protectors of The Rand.`,
+    content: (
+      <>
+        On rare occasions POTRs may have the opportunity to evolve if the owner
+        chooses to do so.
+      </>
+    ),
   },
 ];
 
@@ -112,8 +119,8 @@ function IconCard({ icon, ...props }: IconCardProps) {
       header={icon.toUpperCase()}
       content={
         <div className="flex flex-col items-center h-fit">
-          <span className="h-44">{props.content}</span>
-          <Icon className="h-16 w-16 stroke-[0.03rem] my-auto stroke-[url(#gradient-primary)] fill-none animate-icon-stroke" />
+          <span className="h-40">{props.content}</span>
+          <Icon className="my-4 h-16 w-16 stroke-[0.03rem] my-auto stroke-[url(#gradient-primary)] fill-none animate-icon-stroke" />
         </div>
       }
     />

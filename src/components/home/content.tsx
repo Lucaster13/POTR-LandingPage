@@ -17,7 +17,7 @@ export default function Content({
     <section className={className}>
       <Title />
       <Description />
-      <Cta splineApp={splineApp} />
+      <Cta />
     </section>
   );
 }
