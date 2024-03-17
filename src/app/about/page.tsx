@@ -1,4 +1,3 @@
-import CoinDisplayCase from "@/components/about/coin-display-case";
 import IconCards from "@/components/about/icon-cards";
 import Cta from "@/components/home/cta";
 
