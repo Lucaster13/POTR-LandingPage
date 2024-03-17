@@ -52,12 +52,23 @@ const config = {
             "stroke-dashoffset": "0",
           },
         },
+        "coin-stroke": {
+          "0%": {
+            "stroke-dasharray": "600",
+            "stroke-dashoffset": "600",
+          },
+          "70%, 100%": {
+            "stroke-dasharray": "600",
+            "stroke-dashoffset": "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "spinner-stroke": "spinner-stroke 1.5s ease-in-out infinite",
         "icon-stroke": "icon-stroke 5s linear infinite alternate",
+        "coin-stroke": "coin-stroke 5s linear infinite alternate",
       },
       colors: {
         primary: colors.sky[500],

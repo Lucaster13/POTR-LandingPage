@@ -2,20 +2,24 @@ import { BaseProps } from "@/styles/base";
 import { Button } from "./ui/button";
 import { openNewTab } from "@/lib/utils";
 import RightArrow from "./right-arrow";
+import { useRouter } from "next/navigation";
 
 type ArrowGhostButtonProps = {
   href: string;
+  external?: boolean;
 } & BaseProps;
 
 export default function ArrowGhostButton({
   href,
   children,
+  external,
 }: ArrowGhostButtonProps) {
+  const router = useRouter();
   return (
     <Button
       className="hover:pe-10 group/button"
       variant="secondary"
-      onClick={() => openNewTab(href)}
+      onClick={() => (external ? openNewTab(href) : router.push(href))}
     >
       {children}
       <RightArrow

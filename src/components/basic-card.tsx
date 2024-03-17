@@ -9,7 +9,7 @@ import {
 import { ReactNode } from "react";
 
 export type BasicCardProps = {
-  header: string;
+  header: ReactNode;
   description?: string;
   content: ReactNode;
 } & FadeableProps;
@@ -18,9 +18,10 @@ export default function BasicCard({
   header,
   description,
   content,
+  ...props
 }: BasicCardProps) {
   return (
-    <Card>
+    <Card {...props}>
       <CardHeader>
         <CardTitle className="text-gradient-primary">{header}</CardTitle>
         <CardDescription>{description}</CardDescription>

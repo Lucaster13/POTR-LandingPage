@@ -18,9 +18,11 @@ export default function Cta({ className, exploreCollection }: CtaProps) {
   return (
     <div className={cName}>
       <Button>MINT A POTR</Button>
-      <ArrowGhostButton href={DISCORD_URL}>ENTER THE KINGDOM</ArrowGhostButton>
+      <ArrowGhostButton href={DISCORD_URL} external>
+        ENTER THE KINGDOM
+      </ArrowGhostButton>
       {exploreCollection && (
-        <ArrowGhostButton href={DISCORD_URL}>
+        <ArrowGhostButton href={"/nfts"}>
           EXPLORE THE COLLECTION
         </ArrowGhostButton>
       )}

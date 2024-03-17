@@ -10,6 +10,8 @@ import {
   LucideIcon,
   Swords,
 } from "lucide-react";
+import { ReactNode } from "react";
+import Coin from "../icons/coin";
 
 export const enum IconCardIconType {
   EVOLVE = "evolve",
@@ -19,9 +21,9 @@ export const enum IconCardIconType {
   TRAIN = "train",
 }
 
-const ICONS: Record<IconCardIconType, LucideIcon> = {
+const ICONS: Record<IconCardIconType, LucideIcon | React.FunctionComponent> = {
   evolve: Crown,
-  gather: FileBadge,
+  gather: Coin,
   summon: CircuitBoard,
   equip: Swords,
   train: Goal,
@@ -116,11 +118,19 @@ function IconCard({ icon, ...props }: IconCardProps) {
   return (
     <BasicCard
       {...props}
-      header={icon.toUpperCase()}
+      className="group/iconCard hover:cursor hover:border-normal-600 transition-color duration-300 hover:brightness-125"
+      header={
+        <span className="group-hover/iconCard:tracking-wider transition-all duration-300 ">
+          {icon.toUpperCase()}
+        </span>
+      }
       content={
         <div className="flex flex-col items-center h-fit">
           <span className="h-40">{props.content}</span>
-          <Icon className="my-4 h-16 w-16 stroke-[0.03rem] my-auto stroke-[url(#gradient-primary)] fill-none animate-icon-stroke" />
+          <Icon
+            className="my-4 h-16 w-16 stroke-[0.03rem] my-auto stroke-[url(#gradient-primary)] 
+          group-hover/iconCard:stroke-[0.05rem] fill-none animate-icon-stroke"
+          />
         </div>
       }
     />

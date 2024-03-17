@@ -10,7 +10,6 @@ import { Route } from "@/lib/routes";
 import { useStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 import nav from "@/styles/nav";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ComponentProps } from "react";
 
@@ -40,18 +39,16 @@ export default function Nav() {
   const className = cn(nav({}));
 
   return (
-    <div className="absolute h-fit inset-0 container">
-      <div className={className}>
-        <NavigationMenu className="ms-auto flex-auto justify-end">
-          <NavigationMenuList>
-            {linkProps
-              .filter((p) => !isHomePage || p.href !== Route.HOME) // hide home on home page
-              .map((props) => (
-                <NavigationMenuListLink key={props.href} {...props} />
-              ))}
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
+    <div className={className}>
+      <NavigationMenu className="flex-auto justify-end">
+        <NavigationMenuList>
+          {linkProps
+            .filter((p) => !isHomePage || p.href !== Route.HOME) // hide home on home page
+            .map((props) => (
+              <NavigationMenuListLink key={props.href} {...props} />
+            ))}
+        </NavigationMenuList>
+      </NavigationMenu>
     </div>
   );
 }

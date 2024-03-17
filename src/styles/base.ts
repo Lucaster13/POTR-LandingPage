@@ -1,3 +1,6 @@
+import { ReactNode } from "react";
+
 export type BaseProps = {
   className?: string;
-} & React.HtmlHTMLAttributes<HTMLElement>;
+  children?: ReactNode;
+};

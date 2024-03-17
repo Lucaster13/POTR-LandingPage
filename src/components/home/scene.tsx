@@ -14,10 +14,10 @@ export default function Scene() {
     <Spline
       className={fadeable({
         className: `inset-0 absolute z-0`,
-        faded: !store.splineIsLoaded,
+        faded: !store.homeSceneIsLoaded,
       })}
       onLoad={(spline) => {
-        setTimeout(() => store.set({ splineIsLoaded: true }), 0);
+        setTimeout(() => store.set({ homeSceneIsLoaded: true }), 0);
         splineApp.current = spline;
       }}
       scene="https://prod.spline.design/2qvrhVg1x6Zg7181/scene.splinecode"

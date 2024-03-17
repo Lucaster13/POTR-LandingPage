@@ -34,8 +34,6 @@ export default function RootLayout({
         )}
       >
         <PageBlur />
-        <Nav />
-        <Footer />
         {children}
       </body>
     </html>
