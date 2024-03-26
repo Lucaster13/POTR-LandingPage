@@ -15,3 +15,12 @@ export function openNewTab(url: string) {
 export function capitalize(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+export function chunkList(list: any[], chunkSize: number): any[][] {
+  const numChunks = Math.ceil(list.length / chunkSize);
+  return new Array(numChunks).fill(null).map((_, i) => {
+    // get chunk of list
+    const chunk = [i * chunkSize, Math.min((i + 1) * chunkSize, list.length)];
+    return list.slice(...chunk);
+  });
+}

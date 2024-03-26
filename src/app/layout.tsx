@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
-import Nav from "@/components/nav";
-import Footer from "@/components/footer";
 import PageBlur from "@/components/page-blur";
+import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,7 +33,7 @@ export default function RootLayout({
         )}
       >
         <PageBlur />
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
