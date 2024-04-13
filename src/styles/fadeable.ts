@@ -1,9 +1,10 @@
 import { cn } from "@/lib/utils";
-import Animated, { AnimatedProps } from "./transition";
+import Animated from "./transition";
+import { BaseProps } from "./base";
 
 export type FadeableProps = {
   faded?: Boolean;
-} & AnimatedProps;
+} & BaseProps;
 
 export const fadeable = ({ faded, className }: FadeableProps) =>
-  cn(faded && "opacity-0", Animated({ className }));
+  cn(faded && "opacity-0", Animated(className));

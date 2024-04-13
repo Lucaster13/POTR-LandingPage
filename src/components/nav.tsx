@@ -13,26 +13,28 @@ import nav from "@/styles/nav";
 import { usePathname } from "next/navigation";
 import { ComponentProps } from "react";
 
+const NAV_LINK_PROPS: ComponentProps<typeof NavigationMenuListLink>[] = [
+  {
+    href: Route.HOME,
+    title: "Home",
+  },
+  {
+    href: Route.ABOUT,
+    title: "About",
+    className: "ms-auto",
+  },
+  {
+    href: Route.NFTS,
+    title: "NFTs",
+  },
+];
+
 export default function Nav() {
   const isHomePage = useStore((s) => s.isHomePage);
   const pathname = usePathname();
   useLocation();
 
-  const linkProps: ComponentProps<typeof NavigationMenuListLink>[] = [
-    {
-      href: Route.HOME,
-      title: "Home",
-    },
-    {
-      href: Route.ABOUT,
-      title: "About",
-      className: "ms-auto",
-    },
-    {
-      href: Route.NFTS,
-      title: "NFTs",
-    },
-  ].map((props) => ({
+  const linkProps = NAV_LINK_PROPS.map((props) => ({
     active: pathname === props.href,
     ...props,
   }));

@@ -1,8 +1,5 @@
 import { cn } from "@/lib/utils";
-import { BaseProps } from "./base";
 
-export type AnimatedProps = {} & BaseProps;
-
-export default function Animated({ className }: AnimatedProps) {
+export default function Animated(className?: string) {
   return cn("transition-all duration-300", className);
 }

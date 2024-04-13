@@ -80,6 +80,10 @@ const config = {
       height: {
         "dynamic-screen": "calc(100dvh)",
       },
+      skew: {
+        15: "15deg",
+        24: "24deg",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "./ui/card";
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 export type BasicCardProps = {
   header: ReactNode;
@@ -20,8 +21,9 @@ export default function BasicCard({
   content,
   ...props
 }: BasicCardProps) {
+  const className = cn("w-80 min-w-80", props.className);
   return (
-    <Card {...props}>
+    <Card {...props} className={className}>
       <CardHeader>
         <CardTitle className="text-gradient-primary">{header}</CardTitle>
         <CardDescription>{description}</CardDescription>
