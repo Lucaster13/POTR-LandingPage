@@ -3,6 +3,16 @@
 import withImages from "next-images";
 
 export default {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ipfs.algonode.xyz",
+        port: "",
+        pathname: "/ipfs/**",
+      },
+    ],
+  },
   ...withImages(),
   webpack: (config, { isServer }) => {
     // Fix for Module not found: Can't resolve 'fs'

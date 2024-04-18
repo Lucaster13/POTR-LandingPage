@@ -21,7 +21,7 @@
     "lucide-react": "^0.349.0",
     "next": "latest",
     "next-images": "^1.8.5",
-    "potr-common": "^1.1.15",
+    "potr-common": "latest",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",

@@ -28,9 +28,16 @@ export default function usePotrMetadata() {
       );
 
       return await Promise.all(
-        chunks.map((asaIds) => fetchPotrMetadata(asaIds))
+        chunks.map((asaIds) =>
+          fetchPotrMetadata(
+            asaIds.filter((asaId) => !Boolean(store.potrMetadata[asaId]))
+          )
+        )
       );
     },
+    refetchOnMount: false,
+    refetchOnReconnect: false,
+    refetchOnWindowFocus: false,
   });
 
   return {

@@ -1,3 +1,3 @@
-const CHUNK_SIZE = 30;
+const CHUNK_SIZE = 500;
 
 export { CHUNK_SIZE };

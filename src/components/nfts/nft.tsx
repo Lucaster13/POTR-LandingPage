@@ -36,10 +36,10 @@ export default function Nft({ metadata }: NftProps) {
         <Image
           alt={metadata.name}
           src={metadata.url}
-          loading="lazy"
           width={240}
           height={240}
           className="rounded-lg"
+          priority
         />
       </CardContent>
     </Card>
