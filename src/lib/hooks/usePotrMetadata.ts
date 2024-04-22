@@ -1,34 +1,29 @@
 "use client";
 
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { Algo, Potr, potrConfig } from "potr-common";
+import { Algo, Potr, PotrAssetMetadata, potrConfig } from "potr-common";
 import { useStore } from "../store";
 import { chunkList } from "../utils";
 import { CHUNK_SIZE } from "../constants";
 
-export default function usePotrMetadata() {
+export default function usePotrMetadata(metadata: PotrAssetMetadata[]) {
   const store = useStore();
+
   const { mutate: fetchPotrMetadata } = useMutation({
     mutationFn: (asaIds: number[]) => Promise.all(asaIds.map(Potr.getMetadata)),
-    onSuccess: (potrMetadataPage) => {
-      const potrMetadataCopy = store.potrMetadata;
-
-      potrMetadataPage.map((md) => (potrMetadataCopy[md.id] = md));
-
-      store.set({ potrMetadata: potrMetadataCopy });
-    },
+    onSuccess: (potrMetadataPage) => store.setPotrMetadata(potrMetadataPage),
   });
 
   const { isLoading, error } = useQuery({
     queryKey: ["potr-metadata"],
     queryFn: async () => {
-      const chunks = chunkList(
-        potrConfig.asaIds[Algo.getAlgoNetwork()],
+      const potrAsaIdChunks = chunkList(
+        metadata.map((md) => md.id),
         CHUNK_SIZE
       );
 
       return await Promise.all(
-        chunks.map((asaIds) =>
+        potrAsaIdChunks.map((asaIds) =>
           fetchPotrMetadata(
             asaIds.filter((asaId) => !Boolean(store.potrMetadata[asaId]))
           )

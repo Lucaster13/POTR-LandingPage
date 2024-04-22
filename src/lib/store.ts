@@ -7,7 +7,8 @@ type Store = {
   isHomePage: boolean;
   coinDisplayIsLoaded: boolean;
   potrMetadata: Record<number, PotrMetadata>;
-  set: (s: Partial<Store>) => void;
+  setPotrMetadata: (md: PotrMetadata | PotrMetadata[]) => void;
+  set: (state: Partial<Omit<Store, "PotrMetadata">>) => void;
 };
 
 export const useStore = create(
@@ -18,6 +19,15 @@ export const useStore = create(
       isHomePage: false,
       potrMetadata: {},
       set,
+      setPotrMetadata: (metadata) => {
+        const mdToAdd = Array.isArray(metadata) ? metadata : [metadata];
+        set((state) => ({
+          potrMetadata: {
+            ...state.potrMetadata,
+            ...Object.fromEntries(mdToAdd.map((md) => [md.id, md])),
+          },
+        }));
+      },
     }),
     {
       name: "potr-store",

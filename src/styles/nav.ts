@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { VariantProps, cva } from "class-variance-authority";
-import { FadeableProps, fadeable } from "./fadeable";
+import Fade, { FadeProps } from "./fade";
 
 const navVariants = cva(
   `absolute inset-0 px-6 z-40 h-fit w-fit font-extrabold flex items-center
@@ -21,9 +21,9 @@ const navVariants = cva(
 
 export interface navProps
   extends React.HTMLAttributes<HTMLElement>,
-    VariantProps<typeof navVariants>,
-    FadeableProps {}
+    FadeProps,
+    VariantProps<typeof navVariants> {}
 
-export default function nav({ variant, faded }: navProps) {
-  return cn(navVariants({ variant }), fadeable({ faded }));
+export default function nav({ variant, fadeOut }: navProps) {
+  return cn(navVariants({ variant }), Fade(fadeOut));
 }

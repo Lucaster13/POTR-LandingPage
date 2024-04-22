@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import BasicCard, { BasicCardProps } from "../basic-card";
+import BasicCard, { BasicCardProps } from "../ui/basic-card";
 import {
   CircuitBoard,
   Crown,

@@ -44,4 +44,8 @@ body {
   .bg-base {
     @apply bg-dark;
   }
+
+  .transition {
+    @apply transition-all duration-300;
+  }
 }

@@ -2,7 +2,7 @@
 
 import { useState, lazy, useEffect, useRef } from "react";
 import { Application } from "@splinetool/runtime";
-import { fadeable } from "@/styles/fadeable";
+import Fade from "@/styles/fade";
 import { useStore } from "@/lib/store";
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
@@ -12,10 +12,7 @@ export default function Scene() {
 
   return (
     <Spline
-      className={fadeable({
-        className: `inset-0 absolute z-0`,
-        faded: !store.homeSceneIsLoaded,
-      })}
+      className={Fade(!store.homeSceneIsLoaded, "inset-0 absolute z-0")}
       onLoad={(spline) => {
         setTimeout(() => store.set({ homeSceneIsLoaded: true }), 0);
         splineApp.current = spline;

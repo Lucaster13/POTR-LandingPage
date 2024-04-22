@@ -1,6 +1,5 @@
-import { BaseProps } from "@/styles/base";
 import SvgGradient from "../svg-gradient";
-import { cn } from "@/lib/utils";
+import { BaseProps, cn } from "@/lib/utils";
 
 type CircleProps = {} & BaseProps;
 

@@ -1,19 +1,20 @@
-import { FadeableProps } from "@/styles/fadeable";
+import { FadeProps } from "@/styles/fade";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "./ui/card";
+} from "./card";
 import { ReactNode } from "react";
-import { cn } from "@/lib/utils";
+import { BaseProps, cn } from "@/lib/utils";
 
 export type BasicCardProps = {
   header: ReactNode;
   description?: string;
   content: ReactNode;
-} & FadeableProps;
+} & FadeProps &
+  BaseProps;
 
 export default function BasicCard({
   header,

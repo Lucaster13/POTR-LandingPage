@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
-import Nav from "./nav";
+import Nav from "./ui/nav";
 import Footer from "./footer";
-import { BaseProps } from "@/styles/base";
-import { cn } from "@/lib/utils";
+import { BaseProps, cn } from "@/lib/utils";
 import ScrollToTopButton from "./ui/scroll-to-top-button";
 
 export type PageLayoutProps = {
@@ -10,6 +9,7 @@ export type PageLayoutProps = {
   description?: ReactNode;
   container?: boolean;
   allowScrollToTop?: boolean;
+  scrollable?: boolean;
 } & BaseProps;
 
 export default function PageLayout({
@@ -19,9 +19,8 @@ export default function PageLayout({
   container,
   className,
   allowScrollToTop,
+  scrollable,
 }: PageLayoutProps) {
-  const cName = cn(container && "container flex flex-col gap-20", className);
-
   return (
     <main className="relative h-full w-full">
       <div className="absolute h-full container inset-0">
@@ -29,8 +28,18 @@ export default function PageLayout({
         <Footer />
       </div>
 
-      <div className="overflow-x-visible overflow-y-auto relative h-full w-screen py-36">
-        <div className={cName}>
+      <div
+        className={cn(
+          "overflow-x-visible relative h-full w-screen py-36",
+          scrollable ? "overflow-y-auto" : "overflow-y-visible"
+        )}
+      >
+        <div
+          className={cn(
+            container && "container flex flex-col gap-20",
+            className
+          )}
+        >
           <PageHeader header={header} description={description} />
           {children}
           {allowScrollToTop && (

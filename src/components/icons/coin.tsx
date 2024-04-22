@@ -1,5 +1,4 @@
-import { cn } from "@/lib/utils";
-import { BaseProps } from "@/styles/base";
+import { BaseProps, cn } from "@/lib/utils";
 import SvgGradient from "../svg-gradient";
 
 export default function Coin({ className }: BaseProps) {

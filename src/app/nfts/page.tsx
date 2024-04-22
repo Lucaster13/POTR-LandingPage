@@ -1,15 +1,7 @@
-import NftsList from "@/components/nfts/nfts-list";
-import PageLayout from "@/components/page-layout";
+import NftsPage from "@/components/nfts/nfts-page";
+import { Potr, sleep } from "potr-common";
 
-export default function NFTs() {
-  return (
-    <PageLayout
-      header="NFTs"
-      description="Explore the Protectors of The Rand collection below"
-      container
-      allowScrollToTop
-    >
-      <NftsList />
-    </PageLayout>
-  );
+export default async function NFTs() {
+  const metadata = await Potr.getAllMetadatasWithoutTraits();
+  return <NftsPage metadata={metadata} />;
 }

@@ -1,5 +1,11 @@
 import { type ClassValue, clsx } from "clsx";
+import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
+
+export type BaseProps = {
+  className?: string;
+  children?: ReactNode;
+};
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

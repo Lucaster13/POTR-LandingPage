@@ -1,12 +1,9 @@
 "use client";
 
-import { Application } from "@splinetool/runtime";
-import RightArrow from "../right-arrow";
 import { Button } from "../ui/button";
 import { DISCORD_URL } from "@/lib/routes";
-import { cn, openNewTab } from "@/lib/utils";
-import { BaseProps } from "@/styles/base";
-import ArrowGhostButton from "../arrow-ghost-button";
+import { BaseProps, cn } from "@/lib/utils";
+import ArrowGhostButton from "../ui/arrow-ghost-button";
 
 export type CtaProps = { exploreCollection?: boolean } & BaseProps;
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { BaseProps } from "@/styles/base";
+import { BaseProps } from "@/lib/utils";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();

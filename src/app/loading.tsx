@@ -1,15 +1,14 @@
 import Spinner from "@/components/icons/spinner";
 import { cn } from "@/lib/utils";
-import { FadeableProps, fadeable } from "@/styles/fadeable";
+import Fade, { FadeProps } from "@/styles/fade";
 
-export default function Loading({ faded }: FadeableProps) {
+export default function Loading({ fadeOut }: FadeProps) {
   const className = cn(
-    fadeable({
-      className:
-        "absolute inset-0 h-dynamic-screen w-screen flex items-center flex-col gap-12 justify-center transition-opacity bg-base duration-1000",
-      faded,
-    }),
-    faded ? "-z-50" : "z-50"
+    Fade(
+      fadeOut,
+      "absolute inset-0 h-dynamic-screen w-screen flex items-center flex-col gap-12 justify-center transition-opacity bg-base duration-1000"
+    ),
+    fadeOut ? "-z-50" : "z-50"
   );
   return (
     <section className={className}>

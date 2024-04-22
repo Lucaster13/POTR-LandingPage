@@ -1,7 +1,6 @@
-import { BaseProps } from "@/styles/base";
-import { Button } from "./ui/button";
-import { openNewTab } from "@/lib/utils";
-import RightArrow from "./right-arrow";
+import { Button } from "./button";
+import { BaseProps, openNewTab } from "@/lib/utils";
+import RightArrow from "../icons/right-arrow";
 import { useRouter } from "next/navigation";
 
 type ArrowGhostButtonProps = {

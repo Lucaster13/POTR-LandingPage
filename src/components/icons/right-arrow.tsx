@@ -1,6 +1,5 @@
-import { BaseProps } from "@/styles/base";
-import SvgGradient from "./svg-gradient";
-import { cn } from "@/lib/utils";
+import SvgGradient from "../svg-gradient";
+import { BaseProps, cn } from "@/lib/utils";
 
 export default function RightArrow({ className }: BaseProps) {
   return (
