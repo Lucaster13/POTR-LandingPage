@@ -11,6 +11,7 @@ export type PageLayoutProps = {
   container?: boolean;
   allowScrollToTop?: boolean;
   scrollable?: boolean;
+  actions?: ReactNode;
 } & BaseProps;
 
 export default function PageLayout({
@@ -21,6 +22,7 @@ export default function PageLayout({
   className,
   allowScrollToTop,
   scrollable,
+  actions,
 }: PageLayoutProps) {
   return (
     <main className="relative h-full w-full">
@@ -42,7 +44,13 @@ export default function PageLayout({
             className
           )}
         >
-          {header && <PageHeader header={header} description={description} />}
+          {header && (
+            <PageHeader
+              header={header}
+              actions={actions}
+              description={description}
+            />
+          )}
 
           <div className={cn(container && "container")}>
             <Suspense
@@ -70,20 +78,27 @@ export default function PageLayout({
 function PageHeader({
   header,
   description,
-}: Pick<PageLayoutProps, "header" | "description">) {
+  actions,
+}: Pick<PageLayoutProps, "header" | "description" | "actions">) {
   return (
-    <div
-      className="flex flex-col gap-4 pt-24 glass border-s border-e border-b bg-opacity-30
-        rounded-br-lg rounded-bl-lg container pb-6 sticky -top-12 z-20"
-    >
-      <h2 className="text-5xl lg:w-2/3 text-pretty font-extrabold text-gradient-primary">
-        {header}
-      </h2>
-      {description && (
-        <span className="text-lg lg:w-1/2  text-pretty font-bold text-normal-300">
-          {description}
-        </span>
-      )}
+    <div className="sticky -top-12 z-20 w-full">
+      <div
+        className="flex justify-end flex-col md:flex-row items-start gap-4 md:items-end
+       pt-24 glass border-s border-e border-b bg-opacity-30
+        rounded-br-lg rounded-bl-lg container pb-6 "
+      >
+        <div className="flex flex-col gap-4 w-full">
+          <h2 className="text-5xl lg:w-2/3 text-pretty font-extrabold text-gradient-primary">
+            {header}
+          </h2>
+          {description && (
+            <span className="text-sm md:text-md xl:text-lg lg:w-1/2 text-pretty font-bold text-normal-300">
+              {description}
+            </span>
+          )}
+        </div>
+        {actions}
+      </div>
     </div>
   );
 }

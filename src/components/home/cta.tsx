@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { DISCORD_URL } from "@/lib/routes";
 import { BaseProps, cn } from "@/lib/utils";
 import ArrowGhostButton from "../ui/arrow-ghost-button";
+import MintAPotrButton from "../ui/mint-a-potr-button";
 
 export type CtaProps = { exploreCollection?: boolean } & BaseProps;
 
@@ -14,7 +15,7 @@ export default function Cta({ className, exploreCollection }: CtaProps) {
   );
   return (
     <div className={cName}>
-      <Button>MINT A POTR</Button>
+      <MintAPotrButton />
       <ArrowGhostButton href={DISCORD_URL} external>
         ENTER THE KINGDOM
       </ArrowGhostButton>

@@ -15,7 +15,6 @@ const ROUTE_CONFIG: Record<Route, PageLayoutProps> = {
     header: "About",
     description:
       "POTR is a limited supply mutable-trait NFT collection that uses the Algorand ARC-69 standard.",
-    allowScrollToTop: true,
     container: true,
     scrollable: true,
   },
