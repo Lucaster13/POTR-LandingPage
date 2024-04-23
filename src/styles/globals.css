@@ -48,4 +48,8 @@ body {
   .transition {
     @apply transition-all duration-300;
   }
+
+  .glass {
+    @apply border-normal-800 backdrop-blur-md bg-normal-950 bg-opacity-65;
+  }
 }

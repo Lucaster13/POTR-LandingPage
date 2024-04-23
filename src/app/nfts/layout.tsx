@@ -8,17 +8,5 @@ export default async function NftsLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <PageLayout {...ROUTE_CONFIG[Route.NFTS]}>
-      <Suspense
-        fallback={
-          <div className="w-full flex items-start justify-center h-full">
-            <Spinner />
-          </div>
-        }
-      >
-        {children}
-      </Suspense>
-    </PageLayout>
-  );
+  return <PageLayout {...ROUTE_CONFIG[Route.NFTS]}>{children}</PageLayout>;
 }

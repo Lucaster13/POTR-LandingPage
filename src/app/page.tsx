@@ -13,7 +13,7 @@ export default function Home() {
   const homeSceneIsLoaded = useStore((s) => s.homeSceneIsLoaded);
 
   return (
-    <PageLayout {...ROUTE_CONFIG[Route.HOME]}>
+    <PageLayout {...ROUTE_CONFIG[Route.HOME]} className="py-36">
       <Content fadeOut={!homeSceneIsLoaded} />
       <Scene />
       <Loading fadeOut={homeSceneIsLoaded} />
