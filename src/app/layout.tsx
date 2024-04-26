@@ -4,6 +4,8 @@ import "@/styles/globals.css";
 import { BaseProps, cn } from "@/lib/utils";
 import PageBlur from "@/components/page-blur";
 import Providers from "./providers";
+import Nav from "@/components/ui/nav";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +31,10 @@ export default function RootLayout({ children }: BaseProps) {
         )}
       >
         <PageBlur />
+        <div className="absolute h-full container inset-0">
+          <Nav />
+          <Footer />
+        </div>
         <Providers>{children}</Providers>
       </body>
     </html>

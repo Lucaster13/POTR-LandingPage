@@ -1,6 +1,4 @@
 import { ReactNode, Suspense } from "react";
-import Nav from "./ui/nav";
-import Footer from "./footer";
 import { BaseProps, cn } from "@/lib/utils";
 import ScrollToTopButton from "./ui/scroll-to-top-button";
 import Spinner from "./icons/spinner";
@@ -25,51 +23,44 @@ export default function PageLayout({
   actions,
 }: PageLayoutProps) {
   return (
-    <main className="relative h-full w-full">
-      <div className="absolute h-full container inset-0">
-        <Nav />
-        <Footer />
-      </div>
-
+    <main
+      className={cn(
+        "overflow-x-visible relative h-full w-screen",
+        scrollable ? "overflow-y-auto" : "overflow-y-visible"
+      )}
+    >
       <div
         className={cn(
-          "overflow-x-visible relative h-full w-screen",
-          scrollable ? "overflow-y-auto" : "overflow-y-visible"
+          container && "container flex flex-col gap-20 pb-24",
+          !header && "py-24",
+          className
         )}
       >
-        <div
-          className={cn(
-            container && "container flex flex-col gap-20 pb-24",
-            !header && "py-24",
-            className
-          )}
-        >
-          {header && (
-            <PageHeader
-              header={header}
-              actions={actions}
-              description={description}
-            />
-          )}
+        {header && (
+          <PageHeader
+            header={header}
+            actions={actions}
+            description={description}
+          />
+        )}
 
-          <div className={cn(container && "container")}>
-            <Suspense
-              fallback={
-                <div className="w-full flex items-start justify-center h-full">
-                  <Spinner />
-                </div>
-              }
-            >
-              {children}
-            </Suspense>
-          </div>
-
-          {allowScrollToTop && (
-            <div className="mx-auto">
-              <ScrollToTopButton />
-            </div>
-          )}
+        <div className={cn(container && "container")}>
+          <Suspense
+            fallback={
+              <div className="w-full flex items-start justify-center h-full">
+                <Spinner />
+              </div>
+            }
+          >
+            {children}
+          </Suspense>
         </div>
+
+        {allowScrollToTop && (
+          <div className="mx-auto">
+            <ScrollToTopButton />
+          </div>
+        )}
       </div>
     </main>
   );
