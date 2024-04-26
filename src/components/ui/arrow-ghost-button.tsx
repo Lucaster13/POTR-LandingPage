@@ -18,7 +18,7 @@ export default function ArrowGhostButton({
   const router = useRouter();
   return (
     <Button
-      className="hover:pe-10 group/button"
+      className="hover:pe-10 group/button tracking-wider"
       variant="secondary"
       onClick={() => (external ? openNewTab(href) : router.push(href))}
     >

@@ -9,7 +9,7 @@ function IconCardLink({ text, href }: IconCardLinkProps) {
   return (
     <Link
       href={href}
-      className="text-gradient-primary text-nowrap inline w-fit"
+      className="text-gradient-primary text-nowrap inline w-fit hover:brightness-125"
     >
       {text}
     </Link>
