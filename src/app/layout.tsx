@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
-import { cn } from "@/lib/utils";
+import { BaseProps, cn } from "@/lib/utils";
 import PageBlur from "@/components/page-blur";
 import Providers from "./providers";
-import PageLayout from "@/components/page-layout";
-import { ROUTE_CONFIG, Route } from "@/lib/routes";
-import { headers } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +16,7 @@ export const metadata: Metadata = {
   robots: "index, follow",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: BaseProps) {
   return (
     <html lang="en">
       <head>

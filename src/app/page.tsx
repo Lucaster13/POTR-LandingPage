@@ -1,22 +1,20 @@
-"use client";
-
-import Loading from "./loading";
-import Scene from "@/components/home/scene";
-import { useStore } from "@/lib/store";
-import { lazy } from "react";
+import { Suspense, lazy } from "react";
 import PageLayout from "@/components/page-layout";
 import { ROUTE_CONFIG, Route } from "@/lib/routes";
+import Loading from "./loading";
+
+const homeRouteConfig = ROUTE_CONFIG[Route.HOME];
 
 const Content = lazy(() => import("@/components/home/content"));
+const Scene = lazy(() => import("@/components/home/scene"));
 
-export default function Home() {
-  const homeSceneIsLoaded = useStore((s) => s.homeSceneIsLoaded);
-
+export default function HomePage() {
   return (
-    <PageLayout {...ROUTE_CONFIG[Route.HOME]} className="py-36">
-      <Content fadeOut={!homeSceneIsLoaded} />
-      <Scene />
-      <Loading fadeOut={homeSceneIsLoaded} />
+    <PageLayout {...homeRouteConfig} className="py-36">
+      <Suspense fallback={<Loading />}>
+        <Content />
+        <Scene />
+      </Suspense>
     </PageLayout>
   );
 }

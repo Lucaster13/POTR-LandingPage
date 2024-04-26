@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "./button";
 import { BaseProps, openNewTab } from "@/lib/utils";
 import RightArrow from "../icons/right-arrow";

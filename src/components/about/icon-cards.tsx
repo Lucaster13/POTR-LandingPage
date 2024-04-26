@@ -1,19 +1,9 @@
-"use client";
-
-import Link from "next/link";
 import BasicCard, { BasicCardProps } from "../ui/basic-card";
-import {
-  CircuitBoard,
-  Crown,
-  FileBadge,
-  Goal,
-  LucideIcon,
-  Swords,
-} from "lucide-react";
-import { ReactNode } from "react";
+import { CircuitBoard, Crown, Goal, LucideIcon, Swords } from "lucide-react";
 import Coin from "../icons/coin";
+import { $POTRLearnMoreLink, $POTRLink, PotrAppLink } from "./icon-card-link";
 
-export const enum IconCardIconType {
+const enum IconCardIconType {
   EVOLVE = "evolve",
   SUMMON = "summon",
   GATHER = "gather",
@@ -32,26 +22,6 @@ const ICONS: Record<IconCardIconType, LucideIcon | React.FunctionComponent> = {
 export type IconCardProps = {
   icon: IconCardIconType;
 } & Omit<BasicCardProps, "header">;
-
-const $POTRLink = (
-  <Link href="" className="text-gradient-primary text-nowrap inline w-fit">
-    $POTR
-  </Link>
-);
-
-/* TODO: Add learn more link */
-const $POTRLearnMoreLink = (
-  <Link href="" className="text-gradient-primary text-nowrap inline w-fit">
-    Learn More
-  </Link>
-);
-
-/* TODO: Add rand kingdom link */
-const PotrAppLink = (
-  <Link href="" className="text-gradient-primary text-nowrap inline w-fit">
-    The Rand Kingdom
-  </Link>
-);
 
 const CARD_PROPS: IconCardProps[] = [
   {

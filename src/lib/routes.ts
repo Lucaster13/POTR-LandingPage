@@ -1,6 +1,6 @@
 import { PageLayoutProps } from "@/components/page-layout";
 
-const DISCORD_URL = "https://discord.gg/dzJ3qJVG";
+const DISCORD_URL = "https://discord.gg/cZN4aY3cSs";
 const X_URL = "https://twitter.com/POTR_nft";
 
 const enum Route {
@@ -9,7 +9,9 @@ const enum Route {
   NFTS = "/nfts",
 }
 
-const ROUTE_CONFIG: Record<Route, PageLayoutProps> = {
+type RouteConfig = {} & PageLayoutProps;
+
+const ROUTE_CONFIG: Record<Route, RouteConfig> = {
   [Route.HOME]: {},
   [Route.ABOUT]: {
     header: "About",

@@ -1,6 +1,3 @@
-"use client";
-
-import { Button } from "../ui/button";
 import { DISCORD_URL } from "@/lib/routes";
 import { BaseProps, cn } from "@/lib/utils";
 import ArrowGhostButton from "../ui/arrow-ghost-button";

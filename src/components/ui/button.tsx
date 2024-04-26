@@ -14,6 +14,8 @@ const buttonVariants = cva(
         secondary: "bg-transparent text-light border border-light",
         primary:
           "bg-gradient-primary hover:text-dark hover:brightness-125 text-light",
+        ghost:
+          "bg-transparent bg-opacity-10 hover:bg-normal-600 text-normal-800 hover:brightness-125",
       },
       size: {
         default: "h-10 px-4 py-2",
