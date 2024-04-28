@@ -1,11 +1,5 @@
 import { FadeProps } from "@/styles/fade";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from ".";
 import { ReactNode } from "react";
 import { BaseProps, cn } from "@/lib/utils";
 

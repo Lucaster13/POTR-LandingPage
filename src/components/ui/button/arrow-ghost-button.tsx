@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "./button";
+import { Button } from ".";
 import { BaseProps, openNewTab } from "@/lib/utils";
-import RightArrow from "../icons/right-arrow";
+import RightArrow from "../../icons/right-arrow";
 import { useRouter } from "next/navigation";
 
 type ArrowGhostButtonProps = {

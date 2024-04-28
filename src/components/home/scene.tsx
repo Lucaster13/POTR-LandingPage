@@ -1,7 +1,5 @@
 "use client";
-
-import { lazy } from "react";
-const Spline = lazy(() => import("@splinetool/react-spline"));
+import Spline from "@splinetool/react-spline";
 
 export default function Scene() {
   return (

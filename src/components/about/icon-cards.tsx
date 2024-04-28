@@ -1,4 +1,4 @@
-import BasicCard, { BasicCardProps } from "../ui/basic-card";
+import BasicCard, { BasicCardProps } from "../ui/card/basic-card";
 import { CircuitBoard, Crown, Goal, LucideIcon, Swords } from "lucide-react";
 import Coin from "../icons/coin";
 import { $POTRLearnMoreLink, $POTRLink, PotrAppLink } from "./icon-card-link";

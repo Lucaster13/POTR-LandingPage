@@ -1,7 +1,7 @@
-import { ReactNode, Suspense } from "react";
+import { ReactNode } from "react";
 import { BaseProps, cn } from "@/lib/utils";
-import ScrollToTopButton from "./ui/scroll-to-top-button";
-import Spinner from "./icons/spinner";
+import ScrollToTopButton from "./ui/button/scroll-to-top-button";
+import SimpleSuspense from "./simple-suspense";
 
 export type PageLayoutProps = {
   header?: ReactNode;
@@ -10,6 +10,7 @@ export type PageLayoutProps = {
   allowScrollToTop?: boolean;
   scrollable?: boolean;
   actions?: ReactNode;
+  loadingMessage?: string;
 } & BaseProps;
 
 export default function PageLayout({
@@ -21,6 +22,7 @@ export default function PageLayout({
   allowScrollToTop,
   scrollable,
   actions,
+  loadingMessage,
 }: PageLayoutProps) {
   return (
     <main
@@ -31,8 +33,8 @@ export default function PageLayout({
     >
       <div
         className={cn(
-          container && "container flex flex-col gap-20 pb-24",
-          !header && "py-24",
+          container && "container flex flex-col gap-12 pb-32",
+          !header && "py-32",
           className
         )}
       >
@@ -44,16 +46,8 @@ export default function PageLayout({
           />
         )}
 
-        <div className={cn(container && "container")}>
-          <Suspense
-            fallback={
-              <div className="w-full flex items-start justify-center h-full">
-                <Spinner />
-              </div>
-            }
-          >
-            {children}
-          </Suspense>
+        <div className={cn(container && "container", "h-full")}>
+          <SimpleSuspense message={loadingMessage}>{children}</SimpleSuspense>
         </div>
 
         {allowScrollToTop && (

@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { BaseProps, cn } from "@/lib/utils";
 import PageBlur from "@/components/page-blur";
-import Providers from "./providers";
 import Nav from "@/components/ui/nav";
 import Footer from "@/components/footer";
 
@@ -35,7 +34,7 @@ export default function RootLayout({ children }: BaseProps) {
           <Nav />
           <Footer />
         </div>
-        <Providers>{children}</Providers>
+        {children}
       </body>
     </html>
   );

@@ -1,10 +1,12 @@
-import Spinner from "@/components/icons/spinner";
+"use client";
 
-export default function LoadingPage() {
+import { WifiOff } from "lucide-react";
+
+export default function ErrorPage() {
   return (
     <section
       className={
-        "z-50 h-dynamic-screen w-screen flex items-center flex-col gap-12 justify-center transition-opacity bg-dark duration-1000"
+        "inset-0 h-dynamic-screen w-screen flex items-center flex-col gap-12 justify-center transition-opacity bg-base duration-1000"
       }
     >
       <h1 className="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-wrap font-extrabold">
@@ -16,7 +18,11 @@ export default function LoadingPage() {
           RAND
         </span>
       </h1>
-      <Spinner />
+
+      <div className="flex gap-2 text-normal-400 opacity-75">
+        Currently Offline
+        <WifiOff />
+      </div>
     </section>
   );
 }

@@ -19,12 +19,14 @@ const ROUTE_CONFIG: Record<Route, RouteConfig> = {
       "POTR is a limited supply mutable-trait NFT collection that uses the Algorand ARC-69 standard.",
     container: true,
     scrollable: true,
+    loadingMessage: "Taking a walk to the about page...",
   },
   [Route.NFTS]: {
     header: "NFTs",
     description: "Explore the Protectors of The Rand collection below",
     container: true,
-    className: "h-full",
+    scrollable: true,
+    loadingMessage: "Entering the gallery...",
   },
 };
 

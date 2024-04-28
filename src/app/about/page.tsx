@@ -6,7 +6,7 @@ export default function AboutPage() {
     <>
       <IconCards />
       <Cta
-        className="md:flex-col relative md:items-center my-10 mx-auto w-fit"
+        className="md:flex-col relative md:items-center mt-10 mx-auto w-fit"
         exploreCollection
       />
     </>

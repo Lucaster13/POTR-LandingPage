@@ -1,7 +1,7 @@
 import { DISCORD_URL } from "@/lib/routes";
 import { BaseProps, cn } from "@/lib/utils";
-import ArrowGhostButton from "../ui/arrow-ghost-button";
-import MintPotrButton from "../ui/mint-potr-button";
+import ArrowGhostButton from "../ui/button/arrow-ghost-button";
+import MintPotrButton from "../ui/button/mint-potr-button";
 
 export type CtaProps = { exploreCollection?: boolean } & BaseProps;
 

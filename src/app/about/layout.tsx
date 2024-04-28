@@ -1,5 +1,5 @@
 import PageLayout from "@/components/page-layout";
-import MintPotrButton from "@/components/ui/mint-potr-button";
+import MintPotrButton from "@/components/ui/button/mint-potr-button";
 import { ROUTE_CONFIG, Route } from "@/lib/routes";
 import { BaseProps } from "@/lib/utils";
 

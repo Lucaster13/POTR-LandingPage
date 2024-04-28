@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronUp } from "lucide-react";
-import { Button } from "./button";
+import { Button } from ".";
 
 export default function ScrollToTopButton() {
   return (

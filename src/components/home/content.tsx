@@ -1,8 +1,6 @@
-import Fade from "@/styles/fade";
 import Cta from "./cta";
 import Title from "./title";
 import Description from "./description";
-import { useStore } from "@/lib/store";
 
 export default function Content() {
   return (

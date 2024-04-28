@@ -1,7 +1,6 @@
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 import PageLayout from "@/components/page-layout";
 import { ROUTE_CONFIG, Route } from "@/lib/routes";
-import Loading from "./loading";
 
 const homeRouteConfig = ROUTE_CONFIG[Route.HOME];
 
@@ -11,10 +10,8 @@ const Scene = lazy(() => import("@/components/home/scene"));
 export default function HomePage() {
   return (
     <PageLayout {...homeRouteConfig} className="py-36">
-      <Suspense fallback={<Loading />}>
-        <Content />
-        <Scene />
-      </Suspense>
+      <Content />
+      <Scene />
     </PageLayout>
   );
 }

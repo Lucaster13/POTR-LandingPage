@@ -1,5 +1,4 @@
 import Nft from "./nft";
-import Spinner from "../icons/spinner";
 import { Potr } from "potr-common";
 import { cn } from "@/lib/utils";
 
