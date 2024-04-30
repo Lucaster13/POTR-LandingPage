@@ -4,7 +4,7 @@ import "@/styles/globals.css";
 import { BaseProps, cn } from "@/lib/utils";
 import PageBlur from "@/components/page-blur";
 import Nav from "@/components/ui/nav";
-import Footer from "@/components/footer";
+import Footer from "@/components/ui/nav/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -3,9 +3,9 @@ import { VariantProps, cva } from "class-variance-authority";
 import Fade, { FadeProps } from "./fade";
 
 const navVariants = cva(
-  `absolute inset-0 px-6 z-30 h-fit w-fit font-extrabold flex items-center
+  `absolute inset-0 px-6 z-40 h-fit w-fit font-extrabold flex items-center
     gap-6 rounded-full border glass
-    transition-all duration-300 shadow-sm`,
+    transition-default shadow-sm`,
   {
     variants: {
       variant: {

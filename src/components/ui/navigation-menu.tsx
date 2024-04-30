@@ -64,7 +64,7 @@ const NavigationMenuListLink = React.forwardRef<
   ) => {
     return (
       <NavigationMenuItem
-        className="bg-none transition-all flex duration-300 items-center 
+        className="bg-none transition-default flex items-center 
     justify-center text-sm text-gradient-primary font-medium disabled:pointer-events-none disabled:opacity-50"
       >
         <Link
@@ -86,7 +86,7 @@ const NavigationMenuListLink = React.forwardRef<
             <span>
               {title ?? children}
               {!noUnderline && (
-                <span className="block max-w-0 transition-all duration-300 group-hover/navLink:max-w-full h-px bg-gradient-primary" />
+                <span className="block max-w-0 transition-default group-hover/navLink:max-w-full h-px bg-gradient-primary" />
               )}
             </span>
           </NavigationMenuLink>

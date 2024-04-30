@@ -6,8 +6,8 @@ import {
   NavigationMenuListLink,
 } from "@/components/ui/navigation-menu";
 import { DISCORD_URL, X_URL } from "@/lib/routes";
-import X from "./icons/x";
-import Discord from "./icons/discord";
+import X from "../../icons/x";
+import Discord from "../../icons/discord";
 import nav from "@/styles/nav";
 import { cn } from "@/lib/utils";
 

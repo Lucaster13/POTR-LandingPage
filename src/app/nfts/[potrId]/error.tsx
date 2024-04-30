@@ -12,7 +12,7 @@ export default function NftDetailsPageError({
   reset,
 }: NftDetailsPageErrorProps) {
   return (
-    <div className="h-full flex flex-col gap-4 justify-center items-center">
+    <div className="container h-96 flex flex-col gap-4 justify-center text-center items-center">
       <span>
         Oh no! Something went wrong. Please check the ASA ID or retry below.
       </span>

@@ -66,7 +66,7 @@ function PageHeader({
   actions,
 }: Pick<PageLayoutProps, "header" | "description" | "actions">) {
   return (
-    <div className="sticky -top-12 z-20 w-full">
+    <div className="sticky -top-12 z-30 w-full">
       <div
         className="flex justify-end flex-col md:flex-row items-start gap-4 md:items-end
        pt-24 glass border-s border-e border-b bg-opacity-30

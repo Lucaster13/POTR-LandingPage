@@ -59,7 +59,7 @@ function NftListItem({
       href={`${Route.NFTS}/${metadata.id}`}
       className={cn(isActive && "bg-slate-300", "h-fit w-fit")}
     >
-      <Nft metadata={metadata} size={140} />
+      <Nft metadata={metadata} size={160} />
     </Link>
   );
 }

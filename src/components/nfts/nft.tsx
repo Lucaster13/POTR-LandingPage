@@ -3,14 +3,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import Image from "next/image";
 import { BaseProps, cn } from "@/lib/utils";
 import { Suspense } from "react";
+import { GradientBorder } from "../gradient-border";
 
 type NftProps = {
   metadata: PotrAssetMetadata | PotrMetadata;
   size?: number;
   hoverable?: boolean;
   hideHeader?: boolean;
-};
+} & BaseProps;
 
+// sometimes we will display potr's that only have their asset metadata so we need
+// to differentiate b/w the use cases
 const isPotrMetadata = (
   md: PotrAssetMetadata | PotrMetadata
 ): md is PotrMetadata => Object.hasOwn(md, "traits");
@@ -20,16 +23,19 @@ export default function Nft({
   size = 720,
   hoverable = true,
   hideHeader = false,
+  className,
 }: NftProps) {
   const isSmall = size < 200;
-  const className = cn(
-    "transition border-none bg-gradient-primary h-fit p-px shadow-normal-800 shadow-lg overflow-clip",
-    hoverable &&
-      "hover:scale-110 hover:-rotate-3 hover:cursor-pointer hover:z-10"
-  );
 
   return (
-    <Card className={className}>
+    <Card
+      className={cn(
+        "transition-default p-1 shadow-normal-900 shadow-md relative rounded-lg w-fit h-fit",
+        hoverable &&
+          "hover:scale-110 hover:-rotate-3 hover:cursor-pointer hover:z-20 hover:shadow-normal-800",
+        className
+      )}
+    >
       {!hideHeader && (
         <>
           <NftHeader
@@ -46,11 +52,7 @@ export default function Nft({
         </>
       )}
 
-      <CardContent
-        className={cn(
-          "bg-dark p-1 rounded-lg flex justify-center items-center"
-        )}
-      >
+      <CardContent className={cn("flex justify-center items-center p-0")}>
         <Suspense>
           <Image
             alt={metadata.name}
@@ -66,20 +68,18 @@ export default function Nft({
   );
 }
 
-type NftHeaderProps = {} & BaseProps;
-
-export function NftHeader({ children, className }: NftHeaderProps) {
+function NftHeader({ children, className }: BaseProps) {
   return (
-    <CardHeader
-      className={cn(
-        "absolute bg-gradient-primary p-px h-fit w-fit rounded-md flex items-center -skew-x-24",
-        className
-      )}
-    >
-      <CardTitle
-        className={cn("text-xs font-extrabold bg-dark rounded-md py-1 px-2")}
-      >
-        {children}
+    <CardHeader className={cn("absolute p-0 h-fit w-fit", className)}>
+      <CardTitle className="p-0 h-fit w-fit">
+        <GradientBorder
+          containerClassName={cn("flex items-center")}
+          className={cn("text-xs font-extrabold px-2 py-1")}
+          skewed
+          rounded
+        >
+          {children}
+        </GradientBorder>
       </CardTitle>
     </CardHeader>
   );

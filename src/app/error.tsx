@@ -4,9 +4,9 @@ import { WifiOff } from "lucide-react";
 
 export default function ErrorPage() {
   return (
-    <section
+    <main
       className={
-        "inset-0 h-dynamic-screen w-screen flex items-center flex-col gap-12 justify-center transition-opacity bg-base duration-1000"
+        "h-dynamic-screen w-screen flex items-center flex-col gap-12 justify-center bg-dark"
       }
     >
       <h1 className="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-wrap font-extrabold">
@@ -23,6 +23,6 @@ export default function ErrorPage() {
         Currently Offline
         <WifiOff />
       </div>
-    </section>
+    </main>
   );
 }

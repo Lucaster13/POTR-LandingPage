@@ -88,9 +88,9 @@ function IconCard({ icon, ...props }: IconCardProps) {
   return (
     <BasicCard
       {...props}
-      className="group/iconCard hover:cursor hover:border-normal-600 transition-color duration-300 hover:brightness-125"
+      className="group/iconCard hover:cursor hover:border-normal-600 transition-default hover:brightness-125"
       header={
-        <span className="group-hover/iconCard:tracking-wider transition-all duration-300 ">
+        <span className="group-hover/iconCard:tracking-wider transition-default ">
           {icon.toUpperCase()}
         </span>
       }
