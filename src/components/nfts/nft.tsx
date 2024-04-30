@@ -32,7 +32,7 @@ export default function Nft({
       className={cn(
         "transition-default p-1 shadow-normal-900 shadow-md relative rounded-lg w-fit h-fit",
         hoverable &&
-          "hover:scale-110 hover:-rotate-3 hover:cursor-pointer hover:z-20 hover:shadow-normal-800",
+          "hover:scale-110 hover:-rotate-3 hover:cursor-pointer hover:z-20",
         className
       )}
     >
