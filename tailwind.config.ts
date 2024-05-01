@@ -71,11 +71,11 @@ const config = {
         "coin-stroke": "coin-stroke 5s linear infinite alternate",
       },
       colors: {
-        primary: colors.sky[500],
         dark: "#050505",
         light: colors.neutral[50],
         normal: { ...colors.neutral, "1000": "#050505" },
         discord: "#5865F2",
+        info: colors.sky[500],
         warning: colors.amber[400],
         secondary: colors.neutral[600],
         error: colors.red[400],

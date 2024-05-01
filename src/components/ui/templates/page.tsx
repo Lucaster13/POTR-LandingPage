@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { BaseProps, cn } from "@/lib/utils";
-import ScrollToTopButton from "./ui/button/scroll-to-top-button";
-import SimpleSuspense from "./simple-suspense";
+import ScrollToTopButton from "../button/scroll-to-top-button";
+import SimpleSuspense from "../../simple-suspense";
 
 export type PageLayoutProps = {
   header?: ReactNode;
@@ -13,7 +13,7 @@ export type PageLayoutProps = {
   loadingMessage?: string;
 } & BaseProps;
 
-export default function PageLayout({
+export default function PageTemplate({
   children,
   header,
   description,

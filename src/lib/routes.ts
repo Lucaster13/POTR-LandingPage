@@ -1,10 +1,11 @@
-import { PageLayoutProps } from "@/components/page-layout";
+import { ErrorPageTemplateProps } from "@/components/ui/templates/error";
+import { PageLayoutProps } from "@/components/ui/templates/page";
 
 const DISCORD_URL = "https://discord.gg/cZN4aY3cSs";
 const X_URL = "https://twitter.com/POTR_nft";
 
 const enum Route {
-  HOME = "/",
+  ROOT = "/",
   ABOUT = "/about",
   NFTS = "/nfts",
 }
@@ -12,7 +13,7 @@ const enum Route {
 type RouteConfig = {} & PageLayoutProps;
 
 const ROUTE_CONFIG: Record<Route, RouteConfig> = {
-  [Route.HOME]: {},
+  [Route.ROOT]: {},
   [Route.ABOUT]: {
     header: "About",
     description:

@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 
 const NAV_LINK_PROPS: ComponentProps<typeof NavigationMenuListLink>[] = [
   {
-    href: Route.HOME,
+    href: Route.ROOT,
     title: "Home",
   },
   {
@@ -25,10 +25,10 @@ export default function NavLinks() {
   const pathname = usePathname();
 
   const linkProps = useMemo(() => {
-    const isHomePage = pathname === Route.HOME;
+    const isHomePage = pathname === Route.ROOT;
     return NAV_LINK_PROPS.filter(
       // hide home link on home page
-      (props) => !isHomePage || props.href !== Route.HOME
+      (props) => !isHomePage || props.href !== Route.ROOT
     ).map((props) => ({
       active: pathname === props.href,
       ...props,
