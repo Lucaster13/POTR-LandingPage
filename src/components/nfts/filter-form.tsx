@@ -14,23 +14,29 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Route } from "@/lib/routes";
+import { useEffect } from "react";
 
 const filterFormSchema = z.object({
-  potrAsaId: z.coerce.number().safe().nonnegative({
-    message: "potr asa id must be positive",
-  }),
+  potrAsaId: z.coerce.number().optional(),
 });
 
 export default function FilterForm() {
+  const pathname = usePathname();
+  const potrId = Number(pathname.split("/").at(-1));
   const router = useRouter();
   const form = useForm<z.infer<typeof filterFormSchema>>({
     resolver: zodResolver(filterFormSchema),
     defaultValues: {
-      potrAsaId: 0,
+      potrAsaId: potrId,
     },
   });
+
+  // whenever path updates, update the input value to the value in the url
+  useEffect(() => {
+    form.setValue("potrAsaId", potrId);
+  }, [pathname]);
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof filterFormSchema>) {
