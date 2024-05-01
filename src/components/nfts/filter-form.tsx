@@ -40,6 +40,10 @@ export default function FilterForm() {
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof filterFormSchema>) {
+    if (!values.potrAsaId) {
+      router.push(Route.NFTS);
+      return;
+    }
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     router.push(`${Route.NFTS}/${values.potrAsaId}`);

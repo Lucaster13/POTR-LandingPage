@@ -8,10 +8,7 @@ export default function Spinner({ className }: BaseProps) {
       height="24"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(
-        "lg:scale-[200%] xl:scale-[250%] stroke-[url(#gradient-primary)]",
-        className
-      )}
+      className={cn("stroke-[url(#gradient-primary)]", className)}
     >
       <SvgGradient />
       <g className="animate-spin origin-center duration-[4s]">

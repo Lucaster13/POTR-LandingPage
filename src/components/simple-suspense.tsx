@@ -19,8 +19,8 @@ export default function SimpleSuspense({
 
 function SimpleSuspenseFallback({ message }: SimpleSuspenseProps) {
   return (
-    <div className="flex flex-col h-96 w-full items-center justify-center gap-6">
-      <Spinner className="h-24 w-24" />
+    <div className="flex flex-col w-full h-96 items-center gap-6 justify-center">
+      <Spinner className="h-20 w-20" />
       <span className="text-gradient-primary text-3xl font-extrabold">
         {message}
       </span>

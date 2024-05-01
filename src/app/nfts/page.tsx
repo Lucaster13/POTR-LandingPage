@@ -10,6 +10,5 @@ type NFTsPageProps = {
 export default async function NftsPage({ searchParams }: NFTsPageProps) {
   const metadata = await Potr.getAllMetadatasWithoutTraits();
   const pageNum = Number(searchParams.pageNum) || undefined;
-
   return <NftList metadata={metadata} pageNum={pageNum} />;
 }
