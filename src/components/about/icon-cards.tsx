@@ -88,7 +88,7 @@ function IconCard({ icon, ...props }: IconCardProps) {
   return (
     <BasicCard
       {...props}
-      className="group/iconCard hover:cursor hover:border-normal-600 transition-default hover:brightness-125"
+      className="group/iconCard hover:cursor transition-default hover:brightness-125"
       header={
         <span className="group-hover/iconCard:tracking-wider transition-default ">
           {icon.toUpperCase()}
@@ -98,7 +98,7 @@ function IconCard({ icon, ...props }: IconCardProps) {
         <div className="flex flex-col items-center h-fit">
           <span className="h-40">{props.content}</span>
           <Icon
-            className="my-4 h-16 w-16 stroke-[0.03rem] my-auto stroke-[url(#gradient-primary)] 
+            className="h-16 w-16 stroke-[0.03rem] my-auto stroke-[url(#gradient-primary)] 
           group-hover/iconCard:stroke-[0.05rem] fill-none animate-icon-stroke"
           />
         </div>

@@ -20,14 +20,14 @@ export default async function NftDetailsPage({ params }: NftDetailsPageProps) {
         <h1 className="text-7xl tracking-wide font-extrabold text-gradient-primary">
           {metadata.name}
         </h1>
-        <h3 className="text-lg font-bold text-normal-400">
+        <h3 className="text-lg font-bold text-secondary">
           Lvl. {metadata.traits.Level}
         </h3>
       </div>
       <div className="flex relative">
         <Nft
           metadata={metadata}
-          className="-top-24 hover:cursor-default hover:scale-105 peer/nft group-hover:rotate-1 hover:shadow-normal-800 z-10"
+          className="-top-24 hover:cursor-default hover:scale-105 peer/nft group-hover:rotate-1 z-10"
           hideHeader
           hoverable
           size={400}
@@ -39,7 +39,7 @@ export default async function NftDetailsPage({ params }: NftDetailsPageProps) {
               .map(([t, tVal]) => (
                 <span
                   className="whitespace-nowrap flex text-center justify-end w-full hover:text-gradient-primary
-                 transition-default glass border -skew-x-24 px-2 py-1 rounded-sm"
+                 transition-default glass border px-2 py-1 rounded-lg"
                   key={t}
                 >
                   {t} | {tVal}

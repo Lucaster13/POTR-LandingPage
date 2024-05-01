@@ -66,7 +66,7 @@ export default function ErrorPageTemplate({
 
         <code>{content ?? "Something went wrong :("}</code>
 
-        <h4 className="text-sm text-normal-600">
+        <h4 className="text-sm text-secondary">
           {description ??
             "Please check your internet connection and wait a bit before refreshing the page."}
         </h4>

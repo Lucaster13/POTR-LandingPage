@@ -69,15 +69,14 @@ function PageHeader({
     <div className="sticky -top-12 z-30 w-full">
       <div
         className="flex justify-end flex-col md:flex-row items-start gap-4 md:items-end
-       pt-24 glass border-s border-e border-b bg-opacity-30
-        rounded-br-lg rounded-bl-lg container pb-6 "
+       pt-24 glass border-s border-e border-b rounded-br-lg rounded-bl-lg container pb-6"
       >
         <div className="flex flex-col gap-4 w-full">
           <h2 className="text-5xl lg:w-2/3 text-pretty font-extrabold text-gradient-primary">
             {header}
           </h2>
           {description && (
-            <span className="text-sm md:text-md xl:text-lg lg:w-1/2 text-pretty font-bold text-normal-300">
+            <span className="text-sm md:text-md xl:text-lg lg:w-1/2 text-pretty font-bold text-primary">
               {description}
             </span>
           )}

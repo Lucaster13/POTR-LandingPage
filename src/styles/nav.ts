@@ -4,7 +4,7 @@ import Fade, { FadeProps } from "./fade";
 
 const navVariants = cva(
   `absolute inset-0 px-6 z-40 h-fit w-fit font-extrabold flex items-center
-    gap-6 rounded-full border glass
+    gap-6 rounded-full border glass bg-opacity-75
     transition-default shadow-sm`,
   {
     variants: {

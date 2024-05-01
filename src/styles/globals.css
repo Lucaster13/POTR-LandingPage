@@ -50,6 +50,6 @@ body {
   }
 
   .glass {
-    @apply border-normal-800 backdrop-blur-md bg-normal-950 bg-opacity-65;
+    @apply backdrop-blur-md border-secondary border-opacity-30 bg-normal-900 bg-opacity-40;
   }
 }

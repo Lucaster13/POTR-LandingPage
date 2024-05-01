@@ -72,12 +72,12 @@ const config = {
       },
       colors: {
         dark: "#050505",
-        light: colors.neutral[50],
+        primary: colors.neutral[50],
         normal: { ...colors.neutral, "1000": "#050505" },
         discord: "#5865F2",
         info: colors.sky[500],
         warning: colors.amber[400],
-        secondary: colors.neutral[600],
+        secondary: colors.neutral[500],
         error: colors.red[400],
       },
       height: {

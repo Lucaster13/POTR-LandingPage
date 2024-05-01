@@ -26,7 +26,7 @@ export default function RootLayout({ children }: BaseProps) {
       <body
         className={cn(
           inter.className,
-          "h-dynamic-screen relative antialiased w-screen bg-base text-light overflow-clip"
+          "h-dynamic-screen relative antialiased w-screen bg-base text-primary overflow-clip"
         )}
       >
         <PageBlur />
