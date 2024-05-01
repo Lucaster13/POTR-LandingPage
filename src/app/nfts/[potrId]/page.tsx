@@ -1,5 +1,4 @@
 import Nft from "@/components/nfts/nft";
-import { Card, CardContent } from "@/components/ui/card";
 import { Potr } from "potr-common";
 
 type NftDetailsPageProps = {

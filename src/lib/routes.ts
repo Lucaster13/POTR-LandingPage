@@ -27,7 +27,7 @@ const ROUTE_CONFIG: Record<Route, RouteConfig> = {
     description: "Explore the Protectors of The Rand collection below",
     container: true,
     scrollable: true,
-    loadingMessage: "Calling all POTRs...",
+    loadingMessage: "Loading NFT(s)...",
   },
 };
 
