@@ -16,6 +16,7 @@ export default function NftDetailsErrorPage(props: BaseErrorPageProps) {
       {...props}
       title="Failed to load NFT"
       content={`POTR ASA ID ${potrAsaId}`}
+      description="Please update the ID provided, or refresh the page below."
       actions={
         <Link href={Route.NFTS}>
           <Button variant="tertiary">Back to Nfts</Button>

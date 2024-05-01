@@ -10,6 +10,7 @@ import {
   XCircle,
 } from "lucide-react";
 import { ReactNode } from "react";
+import ContainerTemplate from "./container";
 
 export type BaseErrorPageProps = {
   error: Error & { digest?: string };
@@ -50,33 +51,35 @@ export default function ErrorPageTemplate({
     type === "connection" && "stroke-secondary text-secondary"
   );
   return (
-    <div
-      className="container glass border rounded-lg h-96 flex flex-col gap-4 
-        text-pretty justify-center text-center items-center w-fit"
-    >
-      <Icon className={cn("h-24 w-24", color)} />
+    <div className="h-full container flex">
+      <ContainerTemplate>
+        <Icon className={cn("h-24 w-24", color)} />
 
-      <h1
-        className={cn("text-3xl font-extrabold flex gap-4 items-center", color)}
-      >
-        {title ?? "Uh Oh!"}
-      </h1>
+        <h1
+          className={cn(
+            "text-3xl font-extrabold flex gap-4 items-center",
+            color
+          )}
+        >
+          {title ?? "Uh Oh!"}
+        </h1>
 
-      <code>{content ?? "Something went wrong :("}</code>
+        <code>{content ?? "Something went wrong :("}</code>
 
-      <h4 className="text-sm text-normal-600">
-        {description ??
-          "Please check your internet connection and wait a bit before refreshing the page."}
-      </h4>
+        <h4 className="text-sm text-normal-600">
+          {description ??
+            "Please check your internet connection and wait a bit before refreshing the page."}
+        </h4>
 
-      <div className="flex items-center gap-4 mt-4">
-        {!noRefresh && (
-          <Button variant={"secondary"} onClick={() => reset()}>
-            Refresh
-          </Button>
-        )}
-        {actions}
-      </div>
+        <div className="flex items-center gap-4 mt-4">
+          {!noRefresh && (
+            <Button variant={"secondary"} onClick={() => reset()}>
+              Refresh
+            </Button>
+          )}
+          {actions}
+        </div>
+      </ContainerTemplate>
     </div>
   );
 }

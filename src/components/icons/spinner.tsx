@@ -1,13 +1,17 @@
+import { BaseProps, cn } from "@/lib/utils";
 import SvgGradient from "../svg-gradient";
 
-export default function Spinner() {
+export default function Spinner({ className }: BaseProps) {
   return (
     <svg
       width="24"
       height="24"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      className="lg:scale-[200%] xl:scale-[250%] stroke-[url(#gradient-primary)]"
+      className={cn(
+        "lg:scale-[200%] xl:scale-[250%] stroke-[url(#gradient-primary)]",
+        className
+      )}
     >
       <SvgGradient />
       <g className="animate-spin origin-center duration-[4s]">

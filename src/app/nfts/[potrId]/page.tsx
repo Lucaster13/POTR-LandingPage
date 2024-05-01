@@ -11,6 +11,7 @@ type NftDetailsPageProps = {
 export default async function NftDetailsPage({ params }: NftDetailsPageProps) {
   const potrId = Number(params.potrId) || 0;
   const metadata = await Potr.getMetadata(potrId);
+  throw new Error("test");
 
   return (
     <div className="relative overflow-x-visible flex items-center gap-10">
