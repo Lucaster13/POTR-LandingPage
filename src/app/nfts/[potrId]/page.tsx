@@ -19,7 +19,7 @@ export default async function NftDetailsPage({ params }: NftDetailsPageProps) {
           className="absolute inset-0 top-10 flex w-full h-fit flex-col group-hover/header:brightness-125 justify-center items-end glass
             rounded-sm py-4 px-10 z-10 border -left-32 group-hover/header:left-0 -skew-x-24 transition-default"
         >
-          <h1 className="text-4xl tracking-wide font-extrabold text-gradient-primary">
+          <h1 className="text-7xl tracking-wide font-extrabold text-gradient-primary">
             {metadata.name}
           </h1>
           <h3 className="text-lg font-bold text-normal-400">

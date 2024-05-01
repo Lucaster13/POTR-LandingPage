@@ -8,61 +8,64 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Search } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Route } from "@/lib/routes";
 
 const filterFormSchema = z.object({
-  selectedPotrId: z
-    .number()
-    .safe()
-    .nonnegative({
-      message: "potr asa id must be positive",
-    })
-    .optional(),
+  potrAsaId: z.coerce.number().safe().nonnegative({
+    message: "potr asa id must be positive",
+  }),
 });
 
 export default function FilterForm() {
+  const router = useRouter();
   const form = useForm<z.infer<typeof filterFormSchema>>({
     resolver: zodResolver(filterFormSchema),
-    defaultValues: {},
+    defaultValues: {
+      potrAsaId: 0,
+    },
   });
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof filterFormSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
+    router.push(`${Route.NFTS}/${values.potrAsaId}`);
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex items-center gap-2"
+      >
+        <Button type="submit" variant={"tertiary"} size={"icon"}>
+          <Search />
+        </Button>
         <FormField
           control={form.control}
-          name="selectedPotrId"
+          name="potrAsaId"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>POTR ID</FormLabel>
               <FormControl>
                 <Input
-                  placeholder={""}
+                  placeholder={"Enter 9 digit ASA ID"}
+                  type="number"
+                  className="glass border bg-dark w-48"
                   {...field}
-                  value={field.value ?? undefined}
+                  value={field.value}
                 />
               </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
-              <FormMessage />
+              <FormMessage className="text-xs" />
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
       </form>
     </Form>
   );

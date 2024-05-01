@@ -16,12 +16,15 @@ const buttonVariants = cva(
           "bg-gradient-primary hover:text-dark hover:brightness-125 text-light",
         ghost:
           "bg-transparent bg-opacity-10 hover:bg-normal-900 text-normal-300 hover:brightness-125",
+        tertiary:
+          "bg-none text-normal-500 hover:underline underline-offset-4 hover:brightness-125",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 px-3",
         lg: "h-11 px-8",
         icon: "h-10 w-10",
+        noPad: "p-0",
       },
     },
     defaultVariants: {
@@ -42,7 +45,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(
+          buttonVariants({
+            variant,
+            size: variant === "tertiary" ? "noPad" : size,
+            className,
+          })
+        )}
         ref={ref}
         {...props}
       />

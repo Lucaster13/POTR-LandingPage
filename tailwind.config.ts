@@ -76,6 +76,9 @@ const config = {
         light: colors.neutral[50],
         normal: { ...colors.neutral, "1000": "#050505" },
         discord: "#5865F2",
+        warning: colors.amber[400],
+        secondary: colors.neutral[600],
+        error: colors.red[400],
       },
       height: {
         "dynamic-screen": "calc(100dvh)",
