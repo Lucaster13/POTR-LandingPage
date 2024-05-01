@@ -19,7 +19,7 @@ import { Route } from "@/lib/routes";
 import { useEffect } from "react";
 
 const filterFormSchema = z.object({
-  potrAsaId: z.coerce.number().optional(),
+  potrAsaId: z.coerce.number().optional().or(z.string()),
 });
 
 export default function FilterForm() {
@@ -40,7 +40,7 @@ export default function FilterForm() {
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof filterFormSchema>) {
-    if (values.potrAsaId === undefined) {
+    if (!values.potrAsaId) {
       router.push(Route.NFTS);
       return;
     }
@@ -66,10 +66,9 @@ export default function FilterForm() {
               <FormControl>
                 <Input
                   placeholder={"Enter 9 digit ASA ID"}
-                  type="number"
                   className="glass border bg-dark w-48"
                   {...field}
-                  value={field.value}
+                  value={field.value || ""}
                 />
               </FormControl>
               <FormMessage className="text-xs" />
