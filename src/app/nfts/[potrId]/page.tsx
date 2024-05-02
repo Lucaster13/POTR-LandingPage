@@ -1,4 +1,5 @@
-import Nft from "@/components/nfts/nft";
+import Nft, { potrClassVariants } from "@/components/nfts/nft";
+import { cn } from "@/lib/utils";
 import { Potr } from "potr-common";
 
 type NftDetailsPageProps = {
@@ -14,8 +15,12 @@ export default async function NftDetailsPage({ params }: NftDetailsPageProps) {
   return (
     <div className="relative overflow-x-visible flex flex-col group">
       <div
-        className="relative flex w-full h-fit flex-col peer/header group-hover:brightness-125 justify-center items-end glass
-            rounded-sm py-4 px-10 z-10 border -left-16 group-hover:left-0 -skew-x-24 transition-default"
+        className={cn(
+          "relative flex w-full h-fit flex-col peer/header group-hover:brightness-125 justify-center items-end glass",
+          "rounded-sm py-4 px-10 z-10 border -left-16 group-hover:left-0 -skew-x-24 transition-default",
+          potrClassVariants({ class: metadata.traits.Class }),
+          "bg-gradient-to-bl from-normal-900 from-35%"
+        )}
       >
         <h1 className="text-7xl tracking-wide font-extrabold text-gradient-primary">
           {metadata.name}
@@ -26,7 +31,7 @@ export default async function NftDetailsPage({ params }: NftDetailsPageProps) {
       </div>
       <div className="flex relative">
         <Nft
-          metadata={metadata}
+          potrId={potrId}
           className="-top-24 hover:cursor-default hover:scale-105 peer/nft group-hover:rotate-1 z-10"
           hideHeader
           hoverable
